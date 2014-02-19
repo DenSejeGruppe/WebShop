@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+body {
+	background-image: url('background.png');
+	padding: 5px;
+}
+
+#main {
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+}
+
+#header {
+	background-color: white;
+	border-radius: 15px;
+	padding: 5px;
+	margin-bottom: 1em;
+	border: 1px solid black;
+}
+
+#menu {
+	background-color: white;
+	width: 100%;
+	height: 30px;
+	border-radius: 1em;
+	border: 1px solid black;
+	margin-bottom: 1em;
+}
+
+#buttons {
+	position: relative;
+	text-align: center;
+	float: left;
+	width: 75%;
+	height: auto;
+	margin: 0;
+}
+
+#buttons ul {
+	position: relative; margin : 0 0 0 0;
+	height: 100%;
+	margin: 0 0 0 0;
+}
+
+#search {
+	float: right;
+	clear: right;
+	width: 25%;
+}
+
+#content {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+h1 {
+	text-align: center;
+}
+
+#buttons ul li {
+	display: inline-block;
+	list-style-type: none;
+	width: 6em;
+	height: 100%;
+	font-size: 16pt;
+}
+
+#buttons ul li:hover {
+	background-color: gray;
+}
+
+#content {
+	background-color: white;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 1em;
+	padding-top: 5px;
+}
+
+.article a {
+	text-decoration: none;
+	color: black;
+}
+
+.article {
+	width: 30%;
+	height: 300px;
+	border: 1px solid black;
+	border-radius: 0.5em;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.article p {
+	text-align: left;
+	margin-left: 5px;
+}
+
+.read {
+	border: 2px solid black;
+	display: inline-block;
+	border-radius: 0.5em;
+	padding: 0px 5px 0px 5px;
+	float: right;
+}
+
+.add {
+	border: 2px solid black;
+	display: inline-block;
+	border-radius: 0.5em;
+	padding: 0px 5px 0px 5px;
+	float: right;
+	margin: 0em 0.5em 0.5em 0.5em;
+}
+
+.articleimg {
+	height: 150px;
+	width: 100%;
+}
+
+.firstLine {
+	
+}
+
+.secondLine {
+	
+}
+
+.thirdLine {
+	
+}
