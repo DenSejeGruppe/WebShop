@@ -13,10 +13,10 @@
 
 </h:head>
 
-<h:body> FAT COCK :#
+<h:body> Log in please
 		<h:form id="login" name="login">
-		<h:inputText maxLength="50" value="#{shop.setUsername} " placeholder="Username" />
-		<h:inputSecret maxLength="50" value="shop.setPassword" placeholder="Password" />
+		<h:inputText maxLength="50" value="#{shop.getUsername} " placeholder="Username" />
+		<h:inputSecret maxLength="50" value="#{shop.getPassword}" placeholder="Password" />
 		<h:commandButton value="Login" action="#{shop.checkCredentials}" />
 	</h:form>
 	
