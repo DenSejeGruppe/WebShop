@@ -2,6 +2,7 @@ var loggedin = false;
 
 //Run this function when we have loaded the HTML document
 window.onload = function () {
+	alert("Please accept the webbroweser's request or you won't be able to login in or create a new account");
 	document.getElementById("logge").style.visibility="hidden";
 
 	//This code is called when the body element has been loaded and the application starts
