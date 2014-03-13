@@ -1,8 +1,13 @@
 var loggedin = false;
-
+var count = 1;
 //Run this function when we have loaded the HTML document
 window.onload = function () {
-	alert("Please accept the webbroweser's request or you won't be able to login in or create a new account");
+	function start(count){
+		if(count < 1){
+		alert("Please accept the webbroweser's request or you won't be able to login in or create a new account");
+		}else{}
+		count--;
+	}
 	document.getElementById("logge").style.visibility="hidden";
 
 	//This code is called when the body element has been loaded and the application starts
