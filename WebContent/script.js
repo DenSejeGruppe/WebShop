@@ -1,15 +1,20 @@
 var loggedin = false;
 var studentInBasketPrice = 0;
-var count = 1;
+
+function start(count){
+	this.count = 1;
+	if(count > 0){
+	alert("Please accept the webbrowser's request or you won't be able to log in or create a new account");
+	count--;
+	}else{}
+}
 //Run this function when we have loaded the HTML document
 window.onload = function () {
-	function start(count){
-		if(count > 0){
-		alert("Please accept the webbrowser's request or you won't be able to log in or create a new account");
-		}else{}
-		count--;
-	}
-	start(count);
+	
+	starter();
+	function starter(){
+		start();
+	};
 
 	document.getElementById("logge").style.visibility="hidden";
 	var buyField = document.getElementById("buyField"); 
