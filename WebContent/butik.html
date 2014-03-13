@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<link rel="stylesheet" type="text/css" href="style.css"></link>
+<script type="text/javascript" src="script.js"></script>
+<title>Triple M!</title>
+</head>
+
+<body>
+	<div id="main">
+
+		<div id="header">
+			<h1>NATURALIER FOR ØL!</h1>
+		</div>
+
+		<div id="menu">
+			<div id="buttons">
+
+				<ul>
+					<li><a href="index.html">Forside</a></li>
+					<li><a href="butik.html">Butik</a></li>
+					<li>Kontakt</li>
+					<li><a href="login.html">Admin</a></li>
+				</ul>
+
+			</div>
+
+			<div id="search">
+				<form action="search">
+					<input type="text" name="Search"></input> <input type="submit"
+						value="GO!"></input>
+				</form>
+			</div>
+		</div>
+
+		<input type="text" placeholder="Username" id="username" /> 
+			<input type="password" placeholder="Password" id="password" /> 
+			<input type="button" value="Log ind" id="login" /> 
+			<input type="button" value="Ny bruger" id="createButton" />
+			<div id="logge"></div>
+			
+		<table id="tabel" style="border: 1px solid gray">
+			<thead>
+				<tr id="Tabelhoved">
+
+					<td>Name</td>
+					<td>Price</td>
+					<td>Description</td>
+					<td>Stock</td>
+					<td>I kurv</td>
+					<td>Køb</td>
+				</tr>
+			</thead>
+
+			<tbody id="itemtablebody">
+
+			</tbody>
+		</table>
+
+		<div id="buyField"></div>
+
+
+	</div>
+</body>
+</html>

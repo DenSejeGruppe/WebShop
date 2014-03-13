@@ -1,8 +1,12 @@
 @charset "UTF-8";
 
 body {
-	background-image: url('background.png');
+	background-image: url('background.jpg');
 	padding: 5px;
+	background-size: cover;
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #main {
@@ -12,19 +16,20 @@ body {
 }
 
 #header {
-	background-color: white;
+	background-color: clear;
 	border-radius: 15px;
 	padding: 5px;
 	margin-bottom: 1em;
-	border: 1px solid black;
+}
+
+h1 {
+	font-family: Geneva, Tahoma, Verdana, sans-serif;
 }
 
 #menu {
-	background-color: white;
+	background-color: clear;
 	width: 100%;
 	height: 30px;
-	border-radius: 1em;
-	border: 1px solid black;
 	margin-bottom: 1em;
 }
 
@@ -32,27 +37,61 @@ body {
 	position: relative;
 	text-align: center;
 	float: left;
-	width: 75%;
+	width: 60%;
 	height: auto;
 	margin: 0;
 }
+#tabel{
+	background-color: ;
+	border-radius: 5px;	
+}
+
+#tabel td{
+	border: 1px solid grey;
+	text-align: center;
+}
+
+#Tabelhoved{
+	font-weight: bold;
+	text-align: center;
+}
 
 #buttons ul {
-	position: relative; margin : 0 0 0 0;
+	position: relative; 
+	margin : 0 0 0 0;
 	height: 100%;
-	margin: 0 0 0 0;
+}
+
+#buttons ul li a{
+	text-decoration: none;
+	color: black;
 }
 
 #search {
 	float: right;
 	clear: right;
 	width: 25%;
+	padding-top: 2.5px;
+}
+
+input{
+	border: 1px solid black;
+	padding: 2px;
+}
+
+#loginTable {
+	text-align: center;
+	width: 100%;
 }
 
 #content {
 	position: relative;
 	height: 100%;
 	width: 100%;
+}
+
+#itemtablebody{
+	border: 1px solid black;
 }
 
 h1 {
@@ -68,14 +107,14 @@ h1 {
 }
 
 #buttons ul li:hover {
-	background-color: gray;
+	border-bottom: 2px solid gray;
 }
 
 #content {
-	background-color: white;
+	background-color: clear;
 	text-align: center;
 	border: 1px solid black;
-	border-radius: 1em;
+	border-radius: 2px;
 	padding-top: 5px;
 }
 
@@ -118,16 +157,4 @@ h1 {
 .articleimg {
 	height: 150px;
 	width: 100%;
-}
-
-.firstLine {
-	
-}
-
-.secondLine {
-	
-}
-
-.thirdLine {
-	
 }

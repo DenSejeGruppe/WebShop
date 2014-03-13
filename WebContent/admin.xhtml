@@ -9,4 +9,63 @@
 	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
+<h1>Administration</h1>
+
+
+<h:link value="Create New Item" outcome="CREATE" />
+
+<h:dataTable border="1" var="table" value="#{list.listItem}">
+	<h:column>
+		<f:facet name="header">ID</f:facet>
+		#{table.ID}
+	</h:column>
+
+	<h:column>
+		<f:facet name="header">Navn</f:facet>
+		#{table.name}
+	</h:column>
+
+	<h:column>
+		<f:facet name="header">Pris</f:facet>
+		#{table.price}
+	</h:column>
+
+	<h:column>
+		<f:facet name="header">URL</f:facet>
+		#{table.URL}
+	</h:column>
+
+	<h:column>
+		<f:facet name="header">Beskrivelse</f:facet>
+		#{table.description}
+	</h:column>
+
+	<h:column>
+		<f:facet name="header">Stock</f:facet>
+		#{table.stock}
+	</h:column>
+
+	<h:column>
+		<h:link outcome="MODIFY" value="Modify">
+			<f:param name="ID" value="#{table.ID}" />
+			<f:param name="name" value="#{table.name}" />
+			<f:param name="price" value="#{table.price}" />
+			<f:param name="URL" value="#{table.URL}" />
+			<f:param name="description" value="#{table.description}" />
+		</h:link>
+		<br />
+		
+		<h:link outcome="ADJUST" value="Adjust">
+			<f:param name="ID" value="#{table.ID}" />
+			<f:param name="stock" value="#{table.stock}" />
+		</h:link>
+		
+		<br />
+		<h:link outcome="DELETE" value="Delete">
+			<f:param name="ID" value="#{table.ID}" />
+			<f:param name="name" value="#{table.name}" />
+		</h:link>
+	</h:column>
+</h:dataTable>
+
 </html>

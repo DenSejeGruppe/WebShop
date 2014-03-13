@@ -7,17 +7,84 @@
 	version="2.0">
 
 	<navigation-rule>
-		<from-view-id>login.xhtml</from-view-id>
+		
+		<from-view-id>/login.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>GRANTED</from-outcome>
-			<to-view-id>admin.xhtml</to-view-id>
+			<to-view-id>/admin.xhtml</to-view-id>
 		</navigation-case>
 
 		<navigation-case>
-			<from-outcome>FUCK OFF</from-outcome>
+			<from-outcome>DENIED</from-outcome>
 			<to-view-id>/login.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
+		
 	</navigation-rule>
 
+	<navigation-rule>
+		
+		<from-view-id>/admin.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>CREATE</from-outcome>
+			<to-view-id>/create.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>MODIFY</from-outcome>
+			<to-view-id>/modify.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>ADJUST</from-outcome>
+			<to-view-id>/adjust.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>DELETE</from-outcome>
+			<to-view-id>/delete.xhtml</to-view-id>
+		</navigation-case>
+		
+	</navigation-rule>
+	
+	<navigation-rule>
+		
+		<from-view-id>/create.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>GOBACK</from-outcome>
+			<to-view-id>/admin.xhtml</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+	
+		<navigation-rule>
+		
+		<from-view-id>/modify.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>GOBACK</from-outcome>
+			<to-view-id>/admin.xhtml</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+	
+		<navigation-rule>
+		
+		<from-view-id>/adjust.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>GOBACK</from-outcome>
+			<to-view-id>/admin.xhtml</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+	
+		<navigation-rule>
+		
+		<from-view-id>/delete.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>GOBACK</from-outcome>
+			<to-view-id>/admin.xhtml</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+	
 </faces-config>

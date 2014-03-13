@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="script.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<title>WebShop</title>
+</head>
+<body>
+
+
+
+	<h2 id="center">Pedes shop</h2>
+	<div class="style">
+		<div id="login">
+			<form id="loginForm" onsubmit="return false">
+
+				Username: <input id="loginName" type="text" name="user" size="30"
+					value=""> Password:<input id="loginPass" name="pass"
+					type="password" size="30" value="">
+				<button onclick="accept(this.form)">Login</button>
+				<a href="http://llama13.cs.au.dk:4000/WebShop/login.jsf"><button>Admins</button></a>
+				<p id="loginFail"></p>
+				<button onclick="createCustomer(this.form)">Create</button>
+				<p id="createdUser"></p>
+			</form>
+			<p id="login-succes"></p>
+		</div>
+		<div class="head">
+			<a class="spec" href="http://www.google.com/">Forside</a> <a
+				class="spec" href="http://www.google.com/">Kategorier</a> <a
+				class="spec" href="http://www.google.com/">Betingelser</a> <a
+				class="spec" href="http://www.google.com/">Kontakt</a>
+			<div id="search">
+				<form class="search">
+					<input type="text" name="search" value="Søg" /> <input
+						type="submit" value="Søg" />
+				</form>
+			</div>
+		</div>
+
+		<div class="right">
+			<table style="border: 1px solid gray">
+				<thead>
+					<tr>
+						<td>Id</td>
+						<td>Name</td>
+						<td>Picture</td>
+						<td>Price</td>
+						<td>Stock</td>
+						<td>Items in basket</td>
+						<td>button</td>
+					</tr>
+				</thead>
+
+				<tbody id="itemtablebody">
+
+				</tbody>
+			</table>
+		</div>
+
+		<p class="left">
+
+			<a class="spec2" href="http://www.google.com/">Notebooks</a><br /> <a
+				class="spec2" href="http://www.google.com/">Desktops</a><br /> <a
+				class="spec2" href="http://www.google.com/">Mus</a><br /> <a
+				class="spec2" href="http://www.google.com/">Tastatur</a><br /> <a
+				class="spec2" href="#">Skærme</a><br />
+		</p>
+		<div id="bucket">
+			
+			<p id="purchased"></p>
+			<input id="purchaseButton" type="button" value="purchase"
+				onclick="purchase()">
+			
+		</div>
+	</div>
+</body>
+</html>

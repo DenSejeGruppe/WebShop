@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<modifyItem xmlns="http://www.cs.au.dk/dWebTek/2014">
+	<shopKey>3040F78236D8073C8C692612</shopKey>
+	<itemID>2065</itemID>
+	<itemName>Magnus Jensen, Guide i København</itemName>
+	<itemURL>http://www.google.dk</itemURL>
+
+	<itemPrice>1</itemPrice>
+	<itemDescription><document>Hvis du er i København og ikke stoler på moderne GPS eller Københavnere, så er der hjælp at hente. Tidligere postbud Magnus Jensen kan finde alt på Sjælland(hvis det ligger i Brøndby). 1 øl pr. opkald.</document></itemDescription>
+</modifyItem>

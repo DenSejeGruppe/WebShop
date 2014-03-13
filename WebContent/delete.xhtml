@@ -9,16 +9,22 @@
 	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
-<h:head>
+<head>
+<f:metadata>
+	<f:viewParam name="ID" value="#{delete.id}" />
+</f:metadata>
+</head>
 
-</h:head>
-
-<h:body> Log in please!
-		<h:form id="login">
-		<h:inputText maxLength="50" value="#{shop.username}"/>
-		<h:inputSecret maxLength="50" value="#{shop.password}"/>
-		<h:commandButton value="Login" action="#{shop.checkCredentials}" />
-		</h:form>
-</h:body>
+<body>
+Delete side
+<br />
+Slet #{table.name} med ID #{table.id}?
+	<h:form id="Delete">
+		<h:commandButton value="Delete" action="#{delete.sletItem}" />
+	</h:form>
+	<h:form id="goback">
+		<h:commandButton value="Go Back" action="#{shop.goback}" />
+	</h:form>
+</body>
 
 </html>

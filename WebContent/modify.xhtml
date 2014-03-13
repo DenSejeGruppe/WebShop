@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<head>
+<f:metadata>
+	<f:viewParam name="ID" value="#{modify.id}" />
+	<f:viewParam name="name" value="#{modify.name}" />
+	<f:viewParam name="price" value="#{modify.price}" />
+	<f:viewParam name="URL" value="#{modify.URL}" />
+	<f:viewParam name="description" value="#{modify.description}" />
+</f:metadata>
+</head>
+
+
+<body>
+Modify side
+<br />
+<h:form id="Modify">
+		Name: <h:inputText maxLength="50" value="#{modify.name}" />
+		<br />
+		Price: <h:inputText maxLength="50" value="#{modify.price}" />
+		<br />
+		URL: <h:inputText maxLength="50" value="#{modify.URL}" />
+		<br />
+		Description: <h:inputText maxLength="50" value="#{modify.description}" />
+		<br />
+		<h:commandButton value="Modificer" action="#{modify.modify}" />
+	</h:form>
+	<h:form id="goback">
+		<h:commandButton value="Go Back" action="#{shop.goback}" />
+	</h:form>
+</body>
+
+</html>
