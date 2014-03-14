@@ -1,20 +1,12 @@
 var loggedin = false;
 var studentInBasketPrice = 0;
+var lat;
+var long;
 
-function start(count){
-	this.count = 1;
-	if(count > 0){
-	alert("Please accept the webbrowser's request or you won't be able to log in or create a new account");
-	count--;
-	}else{}
-}
 //Run this function when we have loaded the HTML document
 window.onload = function () {
-	
-	starter();
-	function starter(){
-		start();
-	};
+	alert("Please accept the webbrowser's request or you won't be able to log in or create a new account");
+	getLocation();
 
 	document.getElementById("logge").style.visibility="hidden";
 	var buyField = document.getElementById("buyField"); 
@@ -37,21 +29,23 @@ window.onload = function () {
 	addEventListener(createButton,"click", function(){
 		var username = document.getElementById("username").value;
 		var password = document.getElementById("password").value;
-
-		var pack = ("username="+username+"&"+"password="+password);
-		sendRequest("POST", "rest/shop/createCustomer", pack, function(createCustomerResponse){
-			if(createCustomerResponse === "Success!"){
-				loggedin = true;
-				logge();
-				alert(username +" er blevet oprettet. Velkommen kammerat!");
-			}else if(createCustomerResponse ==="Existing username")
-			{
-				alert(username + " er allerede taget!");
-			}else{
-				"Der er sket en fejl";
-			}
-		});
+		if(55 < lat < 58 && 8 < long < 11 && long != null && lat != null && long != undefined && lat != undefined){
+			var pack = ("username="+username+"&"+"password="+password);
+			sendRequest("POST", "rest/shop/createCustomer", pack, function(createCustomerResponse){
+				if(createCustomerResponse === "Success!"){
+					loggedin = true;
+					logge();
+					alert(username +" er blevet oprettet. Velkommen kammerat!");
+				}else if(createCustomerResponse ==="Existing username")
+				{
+					alert(username + " er allerede taget!");
+				}else{
+					"Der er sket en fejl";
+				}
+			});
+		}else{alert("Du er for langt fra Aarhus kammerat" + long + lat);};
 	});
+
 
 
 	/////////////////////////////////////////////////////////
@@ -64,16 +58,18 @@ window.onload = function () {
 		var username = document.getElementById("username").value;
 		var password = document.getElementById("password").value;
 
-		var pack = ("username="+username+"&"+"password="+password);
-		sendRequest("POST", "rest/shop/login", pack, function(loginResponse){
-			if(loginResponse === "Success!"){
-				loggedin = true;
-				logge();
-				alert("Velkommen " + username);
-			}else{
-				alert("Der er sket en fejl under loginfasen");
-			}
-		});
+		if(55 < lat < 58 && 8 < long < 11 && long != null && lat != null && long != undefined && lat != undefined){
+			var pack = ("username="+username+"&"+"password="+password);
+			sendRequest("POST", "rest/shop/login", pack, function(loginResponse){
+				if(loginResponse === "Success!"){
+					loggedin = true;
+					logge();
+					alert("Velkommen " + username);
+				}else{
+					alert("Der er sket en fejl under loginfasen");
+				}
+			});
+		}else{alert("Du er for langt fra Aarhus kammerat" + long + lat);};
 	});
 
 	////////////////////////////////////////////////////////
@@ -96,9 +92,9 @@ window.onload = function () {
 
 
 /**
-* This function takes the fields and makes them invisible on the 
-* webpage when the user has been successfully logged on to our site
-*/
+ * This function takes the fields and makes them invisible on the 
+ * webpage when the user has been successfully logged on to our site
+ */
 function logge()
 {
 	if(loggedin === true){
@@ -120,9 +116,9 @@ function logge()
 }
 
 /*
-* This function takes all our JSON elements and creates a table
-* row, and a column for everything
-*/
+ * This function takes all our JSON elements and creates a table
+ * row, and a column for everything
+ */
 function loop(item, tableBody){
 	//Create a new line for this item
 	var tr = document.createElement("tr");
@@ -173,8 +169,8 @@ function loop(item, tableBody){
 }
 
 /*
-* This functions loops our loop() function to add all items from our JSON array
-*/
+ * This functions loops our loop() function to add all items from our JSON array
+ */
 function addItemsToTable(items) {
 	//Get the table body we we can add items to it
 	var tableBody = document.getElementById("itemtablebody");
@@ -189,10 +185,10 @@ function addItemsToTable(items) {
 
 
 /*
-* When this function is called we add items to the basket
-* and add the price of the collected items together
-* so we can make out how much we have to pay
-*/
+ * When this function is called we add items to the basket
+ * and add the price of the collected items together
+ * so we can make out how much we have to pay
+ */
 function addToBasket(stock, basket, price){
 
 	var stockValue = stock.childNodes[0].data;
@@ -215,8 +211,8 @@ function addToBasket(stock, basket, price){
 /////////////////////////////////////////////////////
 
 /**
-* A function that can add event listeners in any browser
-*/
+ * A function that can add event listeners in any browser
+ */
 function addEventListener(myNode, eventType, myHandlerFunc) {
 	if (myNode.addEventListener)
 		myNode.addEventListener(eventType, myHandlerFunc, false);
@@ -244,5 +240,19 @@ function sendRequest(httpMethod, url, body, responseHandler) {
 		}
 	};
 	http.send(body);
+}
+
+function getLocation()
+{
+	if (navigator.geolocation)
+	{
+		navigator.geolocation.getCurrentPosition(showPosition);
+	}
+	else{alert("Geolocation is not supported by this browser.");}
+}
+function showPosition(position)
+{
+	lat = position.coords.latitude;
+	long = position.coords.longitude; 
 }
 
